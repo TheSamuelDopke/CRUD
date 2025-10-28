@@ -1,3 +1,22 @@
+<?php
+session_start();
+if(isset($_SESSION['mensagem_erro'])){
+    $mensagem = $_SESSION['mensagem_erro'];
+
+    unset($_SESSION['mensagem_erro']);
+?>
+
+<script >
+
+window.addEventListener('load', () =>{ 
+
+window.alert('<?php echo htmlspecialchars($mensagem); ?>')
+})
+</script>
+
+<?php
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +26,10 @@
     <link rel="stylesheet" href="css/general.css">
 
     <link rel="stylesheet" href="css/criar_post.css">
+
+    <style>
+
+    </style>
 </head>
 <body>
     <header>
@@ -18,17 +41,17 @@
 
 
     <main>
-        <form action="index.php">
+        <form action="acoes.php" method="POST">
             <label for="titulo">Título do Post:</label>
-            <input type="text">
+            <input type="text" name="titulo">
 
             <label for="autor">Nome do Autor:</label>
-            <input type="text">
+            <input type="text" name="autor">
 
             <label for="corpo">Conteúdo do Post:</label>
             <textarea name="corpo" id="corpo" rows="20"></textarea>
 
-            <button>Enviar Post</button>
+            <button type="submit" name="btn_criar_post">Enviar Post</button>
         </form>
     </main>
 </body>

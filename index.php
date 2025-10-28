@@ -1,3 +1,28 @@
+<?php
+session_start();
+
+require 'conexao.php';
+
+if(isset($_SESSION['mensagem_sucesso'])){
+    $mensagem = $_SESSION['mensagem_sucesso'];
+    unset($_SESSION['mensagem_sucesso']);
+
+?>
+<script >
+
+window.addEventListener('load', () =>{ 
+
+window.alert('<?php echo htmlspecialchars($mensagem); ?>')
+})
+</script>
+
+<?php
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
