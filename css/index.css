@@ -4,3 +4,17 @@ main ul li{
     margin: 10px 0px;
 }
 
+thead > tr > th{
+    line-height: 20px;
+}
+
+td{
+    border: 1px solid black;
+    color: red;
+}
+
+table{
+    background-color: black;
+    width: 100px;
+    height: 600px;
+}

@@ -19,7 +19,7 @@ if (isset($_POST['btn_criar_post'])) {
         $sql = "INSERT INTO posts (titulo, autor, corpo) VALUES ('$titulo', '$autor', '$corpo')";
 
         mysqli_query($conexao, $sql);
-        $_SESSION['mensagem_sucesso'] = "Usuário Criado com Sucesso!";
+        $_SESSION['mensagem_sucesso'] = "Post Criado com Sucesso!";
         header('Location: index.php');
         exit;
     }
