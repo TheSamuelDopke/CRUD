@@ -10,7 +10,12 @@ if(isset($_SESSION['mensagem_erro'])){
 
 window.addEventListener('load', () =>{ 
 
+
+setTimeout(() =>{
 window.alert('<?php echo htmlspecialchars($mensagem); ?>')
+
+}, 10)
+
 })
 </script>
 
@@ -43,13 +48,13 @@ window.alert('<?php echo htmlspecialchars($mensagem); ?>')
     <main>
         <form action="acoes.php" method="POST">
             <label for="titulo">Título do Post:</label>
-            <input type="text" name="titulo">
+            <input type="text" name="titulo" required>
 
             <label for="autor">Nome do Autor:</label>
-            <input type="text" name="autor">
+            <input type="text" name="autor" required>
 
             <label for="corpo">Conteúdo do Post:</label>
-            <textarea name="corpo" id="corpo" rows="20"></textarea>
+            <textarea name="corpo" id="corpo" rows="20" required></textarea>
 
             <button type="submit" name="btn_criar_post">Enviar Post</button>
         </form>

@@ -10,13 +10,16 @@ if (isset($_SESSION['mensagem_sucesso'])) {
 ?>
     <script>
         window.addEventListener('load', () => {
+            setTimeout(() =>{
+                window.alert('<?php echo htmlspecialchars($mensagem); ?>')
+            }, 10)
 
-            window.alert('<?php echo htmlspecialchars($mensagem); ?>')
         })
     </script>
 
 <?php
 }
+
 ?>
 
 
@@ -41,50 +44,45 @@ if (isset($_SESSION['mensagem_sucesso'])) {
 
     <main>
         <h2>Posts:</h2>
-        <ul>
-            <table>
-                                    <?php
-                    $sql = 'SELECT * FROM posts';
 
-                    $posts = mysqli_query($conexao, $sql);
 
-                    if (mysqli_num_rows($posts) > 0) {
-                        foreach ($posts as $post) {
+            <?php
+            $sql = 'SELECT * FROM posts';
 
+            $posts = mysqli_query($conexao, $sql);
+
+            if (mysqli_num_rows($posts) > 0) {
+                
+
+            ?>
+
+                    <?php
+                    foreach ($posts as $post) {
                     ?>
-                <thead>
-                    <tr>
-                        <th>Título</th>
-
-                        <th>Autor</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                            <tr>
-                                <td><?= $post['titulo'] ?></td>
-                                <td><?= $post['autor'] ?></td>
-                            </tr>
+                    <div class="div_posts">
+                        <h2><?= $post['titulo'] ?></h1>
+                        <h4>Autor: <?= $post['autor'] ?></h2>
+                        <div>
+                            <a href="ver_post.php?id=<?= $post['id'] ?>" class="link_ver_post"><button>Ver postagem</button></a>
+                        </div>
+                    </div>
 
 
 
                     <?php
-                        }
-                    }else{
+                }
+            } else {
 
-                   
+
                     ?>
-                    <li>Não há nenhum post!</li>
+                    <ul>
+                        <li>Não há nenhum post!</li>
+                    </ul>
+                <?php
+            }
+                ?>
 
-                    <?php
- }
-                    ?>
-                </tbody>
 
-
-
-            </table>
-        </ul>
     </main>
 </body>
 

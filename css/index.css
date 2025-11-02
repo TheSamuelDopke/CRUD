@@ -4,17 +4,23 @@ main ul li{
     margin: 10px 0px;
 }
 
-thead > tr > th{
-    line-height: 20px;
-}
-
-td{
+.div_posts{
+    margin: 20px 0px;
     border: 1px solid black;
-    color: red;
+    padding: 10px;
 }
 
-table{
-    background-color: black;
-    width: 100px;
-    height: 600px;
+.div_posts > div{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
+
+
+
+
+
+
+
+
+
