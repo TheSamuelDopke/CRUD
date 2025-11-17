@@ -5,8 +5,8 @@
 }
 
 body{
-    background-color: lightgreen;
-    color: green;
+    background-color: #f1f1f1;
+    color: #000000;
 }
 
 header{
@@ -33,11 +33,12 @@ main{
 
 button{
     padding: 8px;
-    background-color: rgb(67, 161, 67);
+    background-color: rgb(196, 196, 196);
     border: 1px solid black;
 }
 
 button:hover{
-    background-color: rgb(41, 187, 41);
+    background-color: rgb(134, 134, 134);
     cursor: pointer;
+    color: white;
 }
